@@ -17,4 +17,5 @@
 * [actualfullscreen](https://dwm.suckless.org/patches/actualfullscreen/) to fullscreen apps.
 * [alwayscenter](https://dwm.suckless.org/patches/alwayscenter/) to center floating apps.
 * [layoutscroll](https://dwm.suckless.org/patches/layoutscroll/) to cycle through all layouts.
+* [pertag](https://dwm.suckless.org/patches/pertag/) to preserve layout of each tag/workspace.
 * And my favorite window layouts, [three-column](https://dwm.suckless.org/patches/three-column/) and [horizgrid](https://dwm.suckless.org/patches/horizgrid/).
