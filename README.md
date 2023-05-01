@@ -25,6 +25,7 @@
 ## Dmenu
 [ Dmenu ](https://tools.suckless.org/dmenu/) is my favorite app launcher. I have patched it with :
 * [center](https://tools.suckless.org/dmenu/patches/center/) ~ centers dmenu in the middle of the screen.
+* [border](https://tools.suckless.org/dmenu/patches/border/) ~ adds a border around the dmenu window.
 
 
 
