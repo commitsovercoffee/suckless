@@ -27,4 +27,5 @@
 * [center](https://tools.suckless.org/dmenu/patches/center/) ~ centers dmenu in the middle of the screen.
 * [border](https://tools.suckless.org/dmenu/patches/border/) ~ adds a border around the dmenu window.
 * [highlight](https://tools.suckless.org/dmenu/patches/highlight/) ~ highlights the individual characters of matched text for each dmenu list entry.
+* [mouse-support](https://tools.suckless.org/dmenu/patches/mouse-support/) ~ adds basic mouse support.
 
