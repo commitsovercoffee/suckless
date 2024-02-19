@@ -36,34 +36,38 @@ static const Rule rules[] = {
     /* class    instance    title   tags-mask   isfloating   monitor */
 
     // tag 0 : current
-    { "ristretto",          NULL,   NULL,   0,  0,  -1 },
-    { "gnome-screenshot",   NULL,   NULL,   0,  1,  -1 },
-    { "gcolor3",            NULL,   NULL,   0,  1,  -1 },
+    { "Ristretto",          NULL,   NULL,   0,  0,  -1 },
+    { "Gnome-screenshot",   NULL,   NULL,   0,  1,  -1 },
+    { "Galculator",         NULL,   NULL,   0,  1,  -1 },
+    { "Gcolor3",            NULL,   NULL,   0,  1,  -1 },
 
     // tag 1 : shell
     { "st-256color",          NULL,   NULL,   1,  0,  -1 },
 
     // tag 2 : web
     { "firefox",            NULL,   NULL,   1 << 1,  0,  -1 },
+    { "Chromium",           NULL,   NULL,   1 << 1,  0,  -1 },
     { "Tor Browser",        NULL,   NULL,   1 << 1,  0,  -1 },
 
     // tag 3 : docs
-    { "gedit",              NULL,   NULL,   1 << 2,  0,  -1 },
-    { "evince",             NULL,   NULL,   1 << 2,  0,  -1 },
+    { "Gedit",              NULL,   NULL,   1 << 2,  0,  -1 },
+    { "Evince",             NULL,   NULL,   1 << 2,  0,  -1 },
+    { "DesktopEditors",     NULL,   NULL,   1 << 2,  0,  -1 },
 
     // tag 4 : canvas
-    { "Inkscape",           NULL,   NULL,   1 << 3,  0,  -1 },
-    { "krita", 	            NULL,   NULL,   1 << 3,  0,  -1 },
     { "kolourpaint",        NULL,   NULL,   1 << 3,  0,  -1 },
-    { "mypaint",            NULL,   NULL,   1 << 3,  0,  -1 },
+    { "MyPaint",            NULL,   NULL,   1 << 3,  0,  -1 },
+    { "Gimp",               NULL,   NULL,   1 << 3,  0,  -1 },
+    { "Inkscape",           NULL,   NULL,   1 << 3,  0,  -1 },
     { "obs",                NULL,   NULL,   1 << 3,  0,  -1 },
     { "Pitivi",             NULL,   NULL,   1 << 3,  0,  -1 },
 
     // tag 5 : Utils
-    { "qbittorrent",         NULL,   NULL,   1 << 4,  0,  -1 },
-    { "gnome-disks",        NULL,   NULL,   1 << 4,  0,  -1 },
-    { "pavucontrol",        NULL,   NULL,   1 << 4,  0,  -1 },
-    { "blueman-manager",    NULL,   NULL,   1 << 4,  0,  -1 },
+    { "Torrential",         NULL,   NULL,   1 << 4,  0,  -1 },
+    { "Gnome-disks",        NULL,   NULL,   1 << 4,  0,  -1 },
+    { "Gnome-multi-writer", NULL,   NULL,   1 << 4,  0,  -1 },
+    { "Pavucontrol",        NULL,   NULL,   1 << 4,  0,  -1 },
+    { "Blueman-manager",    NULL,   NULL,   1 << 4,  0,  -1 },
 
     // tag 6 : content
     { "vlc",                NULL,   NULL,   1 << 5,  0,  -1 },
@@ -136,7 +140,6 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_h,      layoutscroll,   {.i = -1 } },
     { MODKEY|ShiftMask,             XK_l,      layoutscroll,   {.i = +1 } },
     { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = printscr } },
-    { MODKEY|ShiftMask,             XK_c,      spawn,          {.v = gcolor3 } },
     { MODKEY|ShiftMask,             XK_k,      spawn,          {.v = pcmanfm } },
     { MODKEY|ShiftMask,             XK_v,      spawn,          {.v = volman } },
     { MODKEY|ShiftMask,             XK_b,      spawn,          {.v = blueman } },
