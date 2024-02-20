@@ -60,7 +60,7 @@ static const Rule rules[] = {
     { "Pitivi",             NULL,   NULL,   1 << 3,  0,  -1 },
 
     // tag 5 : Utils
-    { "qbittorrent",         NULL,   NULL,   1 << 4,  0,  -1 },
+    { "qBittorrent",        NULL,   NULL,   1 << 4,  0,  -1 },
     { "gnome-disks",        NULL,   NULL,   1 << 4,  0,  -1 },
     { "pavucontrol",        NULL,   NULL,   1 << 4,  0,  -1 },
     { "blueman-manager",    NULL,   NULL,   1 << 4,  0,  -1 },
@@ -105,6 +105,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *neovim[]   = { "st", "nvim", NULL};
 static const char *cmus[]     = { "st", "cmus", NULL};
 static const char *printscr[] = {"gnome-screenshot", "-i", NULL};
+static const char *gcolor[]  = {"gcolor3", NULL};
 static const char *pcmanfm[]  = {"pcmanfm", NULL};
 static const char *volman[]   = {"pavucontrol", NULL};
 static const char *blueman[]   = {"blueman-manager", NULL};
@@ -136,7 +137,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_h,      layoutscroll,   {.i = -1 } },
     { MODKEY|ShiftMask,             XK_l,      layoutscroll,   {.i = +1 } },
     { MODKEY|ShiftMask,             XK_p,      spawn,          {.v = printscr } },
-    { MODKEY|ShiftMask,             XK_c,      spawn,          {.v = gcolor3 } },
+    { MODKEY|ShiftMask,             XK_c,      spawn,          {.v = gcolor } },
     { MODKEY|ShiftMask,             XK_k,      spawn,          {.v = pcmanfm } },
     { MODKEY|ShiftMask,             XK_v,      spawn,          {.v = volman } },
     { MODKEY|ShiftMask,             XK_b,      spawn,          {.v = blueman } },
