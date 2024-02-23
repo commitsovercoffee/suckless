@@ -36,40 +36,47 @@ static const Rule rules[] = {
     /* class    instance    title   tags-mask   isfloating   monitor */
 
     // tag 0 : current
-    { "ristretto",          NULL,   NULL,   0,  0,  -1 },
-    { "gnome-screenshot",   NULL,   NULL,   0,  1,  -1 },
-    { "gcolor3",            NULL,   NULL,   0,  1,  -1 },
+    { "Gcolor3",            NULL,   NULL,   0,  1,  -1 }, // colorpicker
+    { "Gnome-screenshot",   NULL,   NULL,   0,  1,  -1 }, // screencap as image
+    { "Peek",               NULL,   NULL,   0,  1,  -1 }, // screencap as GIF
 
-    // tag 1 : shell
-    { "st-256color",          NULL,   NULL,   1,  0,  -1 },
+    // tag 1 : browser
+    { "firefox",            NULL,   NULL,   1,  0,  -1 },
+    { "Tor Browser",        NULL,   NULL,   1,  0,  -1 },
 
-    // tag 2 : web
-    { "firefox",            NULL,   NULL,   1 << 1,  0,  -1 },
-    { "Tor Browser",        NULL,   NULL,   1 << 1,  0,  -1 },
+    // tag 2 : terminal & neovide
+    { "st-256color",        NULL,   NULL,   1 << 1,  0,  -1 },
+    { "neovide",            NULL,   NULL,   1 << 1,  0,  -1 },
 
-    // tag 3 : docs
-    { "gedit",              NULL,   NULL,   1 << 2,  0,  -1 },
-    { "evince",             NULL,   NULL,   1 << 2,  0,  -1 },
+    // tag 3 : work
+    { "Vivaldi-stable",     NULL,   NULL,   1 << 2,  0,  -1 },
 
-    // tag 4 : canvas
-    { "Inkscape",           NULL,   NULL,   1 << 3,  0,  -1 },
-    { "krita", 	            NULL,   NULL,   1 << 3,  0,  -1 },
-    { "kolourpaint",        NULL,   NULL,   1 << 3,  0,  -1 },
-    { "mypaint",            NULL,   NULL,   1 << 3,  0,  -1 },
-    { "obs",                NULL,   NULL,   1 << 3,  0,  -1 },
-    { "Pitivi",             NULL,   NULL,   1 << 3,  0,  -1 },
+    // tag 4 : docs
+    { "Ristretto",          NULL,   NULL,   1 << 3,  0,  -1 },
+    { "Evince",             NULL,   NULL,   1 << 3,  0,  -1 },
+    { "Gedit",              NULL,   NULL,   1 << 3,  0,  -1 },
+    { "libreoffice",        NULL,   NULL,   1 << 3,  0,  -1 },
 
-    // tag 5 : Utils
+    // tag 5 : utils
+    { "Pavucontrol",        NULL,   NULL,   1 << 4,  0,  -1 },
+    { "Blueman-manager",    NULL,   NULL,   1 << 4,  0,  -1 },
     { "qBittorrent",        NULL,   NULL,   1 << 4,  0,  -1 },
-    { "gnome-disks",        NULL,   NULL,   1 << 4,  0,  -1 },
-    { "pavucontrol",        NULL,   NULL,   1 << 4,  0,  -1 },
-    { "blueman-manager",    NULL,   NULL,   1 << 4,  0,  -1 },
+    { "Gnome-disks",        NULL,   NULL,   1 << 4,  0,  -1 },
 
-    // tag 6 : content
+    // tag 6 : files
+    { "Pcmanfm",            NULL,   NULL,   1 << 5,  0,  -1 },
     { "vlc",                NULL,   NULL,   1 << 5,  0,  -1 },
 
-    // tag 7 : games
-    { "Lutris",             NULL,   NULL,   1 << 6,  0,  -1 },
+    // tag 7 : studio
+    { "obs",                NULL,   NULL,   1 << 6,  0,  -1 },
+    { "Pitivi",             NULL,   NULL,   1 << 6,  0,  -1 },
+
+    // tag 8 : creative
+    { "Inkscape",           NULL,   NULL,   1 << 7,  0,  -1 },
+    { "kolourpaint",        NULL,   NULL,   1 << 7,  0,  -1 },
+    { "krita",              NULL,   NULL,   1 << 7,  0,  -1 },
+    { "MyPaint",            NULL,   NULL,   1 << 7,  0,  -1 },
+
 };
 
 /* layout(s) */
@@ -102,8 +109,8 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *neovim[]   = { "st", "nvim", NULL};
 static const char *cmus[]     = { "st", "cmus", NULL};
+static const char *neovide[]   = {"neovide", NULL};
 static const char *printscr[] = {"gnome-screenshot", "-i", NULL};
 static const char *gcolor[]  = {"gcolor3", NULL};
 static const char *pcmanfm[]  = {"pcmanfm", NULL};
@@ -141,7 +148,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_k,      spawn,          {.v = pcmanfm } },
     { MODKEY|ShiftMask,             XK_v,      spawn,          {.v = volman } },
     { MODKEY|ShiftMask,             XK_b,      spawn,          {.v = blueman } },
-    { MODKEY|ShiftMask,             XK_n,      spawn,          {.v = neovim } },
+    { MODKEY|ShiftMask,             XK_n,      spawn,          {.v = neovide } },
     { MODKEY|ShiftMask,             XK_m,      spawn,          {.v = cmus } },
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
