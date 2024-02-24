@@ -44,9 +44,8 @@ static const Rule rules[] = {
     { "firefox",            NULL,   NULL,   1,  0,  -1 },
     { "Tor Browser",        NULL,   NULL,   1,  0,  -1 },
 
-    // tag 2 : terminal & neovide
+    // tag 2 : terminal
     { "st-256color",        NULL,   NULL,   1 << 1,  0,  -1 },
-    { "neovide",            NULL,   NULL,   1 << 1,  0,  -1 },
 
     // tag 3 : work
     { "Vivaldi-stable",     NULL,   NULL,   1 << 2,  0,  -1 },
@@ -110,7 +109,6 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *cmus[]     = { "st", "cmus", NULL};
-static const char *neovide[]   = {"neovide", NULL};
 static const char *printscr[] = {"gnome-screenshot", "-i", NULL};
 static const char *gcolor[]  = {"gcolor3", NULL};
 static const char *slock[]  = {"slock", NULL};
@@ -150,7 +148,6 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_k,      spawn,          {.v = pcmanfm } },
     { MODKEY|ShiftMask,             XK_v,      spawn,          {.v = volman } },
     { MODKEY|ShiftMask,             XK_b,      spawn,          {.v = blueman } },
-    { MODKEY|ShiftMask,             XK_n,      spawn,          {.v = neovide } },
     { MODKEY|ShiftMask,             XK_m,      spawn,          {.v = cmus } },
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
