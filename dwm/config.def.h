@@ -39,6 +39,7 @@ static const Rule rules[] = {
     { "Gcolor3",            NULL,   NULL,   0,  1,  -1 }, // colorpicker
     { "Gnome-screenshot",   NULL,   NULL,   0,  1,  -1 }, // screencap as image
     { "Peek",               NULL,   NULL,   0,  1,  -1 }, // screencap as GIF
+    { "Ristretto",          NULL,   NULL,   0,  1,  -1 }, // screencap as GIF
 
     // tag 1 : browser
     { "firefox",            NULL,   NULL,   1,  0,  -1 },
@@ -51,7 +52,6 @@ static const Rule rules[] = {
     { "Vivaldi-stable",     NULL,   NULL,   1 << 2,  0,  -1 },
 
     // tag 4 : docs
-    { "Ristretto",          NULL,   NULL,   1 << 3,  0,  -1 },
     { "Evince",             NULL,   NULL,   1 << 3,  0,  -1 },
     { "Gedit",              NULL,   NULL,   1 << 3,  0,  -1 },
     { "libreoffice",        NULL,   NULL,   1 << 3,  0,  -1 },
@@ -62,9 +62,9 @@ static const Rule rules[] = {
     { "qBittorrent",        NULL,   NULL,   1 << 4,  0,  -1 },
     { "Gnome-disks",        NULL,   NULL,   1 << 4,  0,  -1 },
 
-    // tag 6 : files
+    // tag 6 : files & media player
     { "Pcmanfm",            NULL,   NULL,   1 << 5,  0,  -1 },
-    { "vlc",                NULL,   NULL,   1 << 5,  0,  -1 },
+    { "mpv",                NULL,   NULL,   1 << 5,  0,  -1 },
 
     // tag 7 : studio
     { "obs",                NULL,   NULL,   1 << 6,  0,  -1 },
@@ -113,6 +113,7 @@ static const char *printscr[] = {"gnome-screenshot", "-i", NULL};
 static const char *gcolor[]  = {"gcolor3", NULL};
 static const char *slock[]  = {"slock", NULL};
 static const char *pcmanfm[]  = {"pcmanfm", NULL};
+static const char *appfinder[]  = {"xfce4-appfinder", NULL};
 static const char *volman[]   = {"pavucontrol", NULL};
 static const char *blueman[]   = {"blueman-manager", NULL};
 static const char scratchpadname[] = "scratchpad";
@@ -120,10 +121,10 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
-    { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+    { MODKEY,                       XK_d,      spawn,          {.v = appfinder } },
     { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
-    { MODKEY,                       XK_b,      togglebar,      {0} },
+    /*  { MODKEY,                       XK_b,      togglebar,      {0} },*/
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
     { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
