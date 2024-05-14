@@ -47,6 +47,7 @@ static const Rule rules[] = {
 
     // tag 2 : terminal
     { "st-256color",        NULL,   NULL,   1 << 1,  0,  -1 },
+    { "neovide",            NULL,   NULL,   1 << 1,  0,  -1 },
 
     // tag 3 : work
     { "Vivaldi-stable",     NULL,   NULL,   1 << 2,  0,  -1 },
