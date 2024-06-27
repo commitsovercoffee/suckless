@@ -39,7 +39,8 @@ static const Rule rules[] = {
     { "Gcolor3",            NULL,   NULL,   0,  1,  -1 }, // colorpicker
     { "Gnome-screenshot",   NULL,   NULL,   0,  1,  -1 }, // screencap as image
     { "Peek",               NULL,   NULL,   0,  1,  -1 }, // screencap as GIF
-    { "Ristretto",          NULL,   NULL,   0,  1,  -1 }, // screencap as GIF
+    { "Ristretto",          NULL,   NULL,   0,  0,  -1 }, // image viewer
+    { "pavucontrol-qt",     NULL,   NULL,   0,  1,  -1 }, // volume control
 
     // tag 1 : browser
     { "firefox",            NULL,   NULL,   1,  0,  -1 },
@@ -115,7 +116,7 @@ static const char *neovide[]  = {"neovide", NULL};
 static const char *slock[]  = {"slock", NULL};
 static const char *pcmanfm[]  = {"pcmanfm", NULL};
 static const char *appfinder[]  = {"xfce4-appfinder", NULL};
-static const char *volman[]   = {"pavucontrol", NULL};
+static const char *volman[]   = {"pavucontrol-qt", NULL};
 static const char *blueman[]   = {"blueman-manager", NULL};
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
