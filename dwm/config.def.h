@@ -17,7 +17,8 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#31353D";
-static const char *colors[][3]      = {
+static const char *colors[][3]      =
+{
     /*               fg         bg         border   */
     [SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
     [SchemeSel]  = { col_gray4, col_cyan,  col_gray3 },
@@ -27,56 +28,53 @@ static const char *colors[][3]      = {
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const unsigned int ulinepad	= 5;	/* horizontal padding between the underline and tag */
-static const unsigned int ulinestroke	= 2;	/* thickness / height of the underline */
+static const unsigned int ulinestroke	= 2;	/* thickness & height of the underline */
 static const unsigned int ulinevoffset	= 0;	/* how far above the bottom of the bar the line should appear */
 static const int ulineall 		= 0;	/* 1 to show underline on all tags, 0 for just the active ones */
 
-static const Rule rules[] = {
-
-    /* class    instance    title   tags-mask   isfloating   monitor */
+static const Rule rules[] =
+{
+    /* class | instance | title | tags-mask | isfloating | monitor */
 
     // tag 0 : current
-    { "Gcolor3",            NULL,   NULL,   0,  1,  -1 }, // colorpicker
-    { "Gnome-screenshot",   NULL,   NULL,   0,  1,  -1 }, // screencap as image
-    { "Peek",               NULL,   NULL,   0,  1,  -1 }, // screencap as GIF
-    { "Ristretto",          NULL,   NULL,   0,  0,  -1 }, // image viewer
-    { "pavucontrol-qt",     NULL,   NULL,   0,  1,  -1 }, // volume control
+    { "Nl.hjdskes.gcolor3", NULL, NULL, 0,  1, -1 }, // colorpicker
+    { "Gnome-screenshot",   NULL, NULL, 0,  1, -1 }, // screencap as image
+    { "Peek",               NULL, NULL, 0,  1, -1 }, // screencap as GIF
+    { "Ristretto",          NULL, NULL, 0,  0, -1 }, // image viewer
 
     // tag 1 : browser
-    { "firefox",            NULL,   NULL,   1,  0,  -1 },
-    { "Tor Browser",        NULL,   NULL,   1,  0,  -1 },
+    { "firefox",            NULL, NULL, 1,  0, -1 },
+    { "Tor Browser",        NULL, NULL, 1,  0, -1 },
 
     // tag 2 : terminal
-    { "st-256color",        NULL,   NULL,   1 << 1,  0,  -1 },
-    { "neovide",            NULL,   NULL,   1 << 1,  0,  -1 },
+    { "st-256color",        NULL, NULL, 1 << 1,  0, -1 },
+    { "neovide",            NULL, NULL, 1 << 1,  0, -1 },
 
     // tag 3 : work
-    { "Vivaldi-stable",     NULL,   NULL,   1 << 2,  0,  -1 },
+    { "firefox-developer-edition", NULL, NULL, 1 << 2, 0, -1 },
 
     // tag 4 : docs
-    { "Evince",             NULL,   NULL,   1 << 3,  0,  -1 },
-    { "Gedit",              NULL,   NULL,   1 << 3,  0,  -1 },
-    { "libreoffice",        NULL,   NULL,   1 << 3,  0,  -1 },
+    { "Evince",             NULL, NULL, 1 << 3, 0, -1 },
+    { "Gedit",              NULL, NULL, 1 << 3, 0, -1 },
+    { "libreoffice",        NULL, NULL, 1 << 3, 0, -1 },
 
     // tag 5 : utils
-    { "Pavucontrol",        NULL,   NULL,   1 << 4,  0,  -1 },
-    { "Blueman-manager",    NULL,   NULL,   1 << 4,  0,  -1 },
-    { "qBittorrent",        NULL,   NULL,   1 << 4,  0,  -1 },
-    { "Gnome-disks",        NULL,   NULL,   1 << 4,  0,  -1 },
+    { "Blueman-manager",    NULL, NULL, 1 << 4,  0, -1 },
+    { "qBittorrent",        NULL, NULL, 1 << 4,  0, -1 },
+    { "Gnome-disks",        NULL, NULL, 1 << 4,  0, -1 },
+    { "pavucontrol",        NULL, NULL, 1 << 4,  0, -1 },
 
     // tag 6 : files & media player
-    { "Pcmanfm",            NULL,   NULL,   1 << 5,  0,  -1 },
-    { "mpv",                NULL,   NULL,   1 << 5,  0,  -1 },
+    { "Pcmanfm",            NULL, NULL, 1 << 5,  0, -1 },
+    { "io.github.celluloid_player.Celluloid", NULL, NULL, 1 << 5, 0, -1 },
 
     // tag 7 : studio
-    { "obs",                NULL,   NULL,   1 << 6,  0,  -1 },
-    { "Pitivi",             NULL,   NULL,   1 << 6,  0,  -1 },
+    { "obs",                NULL, NULL, 1 << 6, 0, -1 },
+    { "Pitivi",             NULL, NULL, 1 << 6, 0, -1 },
 
     // tag 8 : creative
-    { "Inkscape",           NULL,   NULL,   1 << 7,  0,  -1 },
-    { "kolourpaint",        NULL,   NULL,   1 << 7,  0,  -1 },
-    { "krita",              NULL,   NULL,   1 << 7,  0,  -1 },
-    { "MyPaint",            NULL,   NULL,   1 << 7,  0,  -1 },
+    { "Inkscape",           NULL, NULL, 1 << 7,  0, -1 },
+    { "Pinta",              NULL, NULL, 1 << 7,  0, -1 },
 
 };
 
@@ -88,7 +86,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 #include "tcl.c"
 #include "horizgrid.c"
-static const Layout layouts[] = {
+static const Layout layouts[] =
+{
     /* symbol     arrange function */
     { "|||",      tcl },
     { "###",      horizgrid },
@@ -116,12 +115,13 @@ static const char *neovide[]  = {"neovide", NULL};
 static const char *slock[]  = {"slock", NULL};
 static const char *pcmanfm[]  = {"pcmanfm", NULL};
 static const char *appfinder[]  = {"xfce4-appfinder", NULL};
-static const char *volman[]   = {"pavucontrol-qt", NULL};
+static const char *volman[]   = {"pavucontrol", NULL};
 static const char *blueman[]   = {"blueman-manager", NULL};
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
-static Key keys[] = {
+static Key keys[] =
+{
     /* modifier                     key        function        argument */
     { MODKEY,                       XK_d,      spawn,          {.v = appfinder } },
     { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
@@ -168,7 +168,8 @@ static Key keys[] = {
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
-static Button buttons[] = {
+static Button buttons[] =
+{
     /* click                event mask      button          function        argument */
     { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
     { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
